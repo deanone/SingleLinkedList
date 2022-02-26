@@ -5,28 +5,28 @@ class Node;
 
 class SingleLinkedList
 {
-	Node* head;
+    Node* head;
 public:
 
-	/*!
-	 * Constructor. 
-	 */
-	SingleLinkedList(int data);
+    /*!
+     * Constructor. 
+     */
+    SingleLinkedList(int data);
 
-	/*!
-	 * Destructor. 
-	 */
-	~SingleLinkedList();
+    /*!
+     * Destructor. 
+     */
+    ~SingleLinkedList();
 
-	void append(int data);
+    void append(int data);
 
-	void prepend(int data);
+    void prepend(int data);
 
-	void remove(int data);
+    void remove(int data);
 
-	void print();
+    void print();
 
 };
 
 
-#endif	// SINGLE_LINKED_LIST
+#endif  // SINGLE_LINKED_LIST

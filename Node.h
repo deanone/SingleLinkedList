@@ -4,19 +4,19 @@
 class Node
 {
 public:
-	int data;
-	Node* next;
+    int data;
+    Node* next;
 public:
-	/*!
-	 * Constructor. 
-	 */
-	Node(int data);
+    /*!
+     * Constructor. 
+     */
+    Node(int data);
 
-	/*!
+    /*!
      * Destructor.
- 	 */
-	~Node();
+     */
+    ~Node();
 
 };
 
-#endif	// NODE_H
+#endif  // NODE_H
