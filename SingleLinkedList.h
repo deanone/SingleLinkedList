@@ -22,6 +22,8 @@ public:
     
     int size2();
 
+    bool find(int key);
+
     void append(int data);
 
     void prepend(int data);

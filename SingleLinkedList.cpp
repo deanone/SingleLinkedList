@@ -50,6 +50,25 @@ int SingleLinkedList::size2()
     return s;
 }
 
+bool SingleLinkedList::find(int key)
+{
+    if (head == nullptr)
+    {
+        return false;
+    }
+
+    Node* current = head;
+    while (current != nullptr)
+    {
+        if (current->data == key)
+        {
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
+}
+
 void SingleLinkedList::append(int data)
 {
     if (head != nullptr) // if list not empty

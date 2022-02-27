@@ -39,6 +39,13 @@ int main(int argc, char* argv[])
 
         std::cout << "Single linked list size: " << list->size1() << "\n";
 
+        int key = 10;
+        bool found = list->find(key);
+        if (found)
+        {
+            std::cout << key << " found in the list.\n";
+        }
+
         delete list;
     }
     else
