@@ -18,6 +18,10 @@ public:
      */
     ~SingleLinkedList();
 
+    int size1();
+    
+    int size2();
+
     void append(int data);
 
     void prepend(int data);

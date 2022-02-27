@@ -13,12 +13,16 @@ int main(int argc, char* argv[])
 
         list->print();
 
+        std::cout << "Single linked list size: " << list->size1() << "\n";
+
         for (int i = 0; i < 3; i++)
         {
             list->append(i);
         }
 
         list->print();
+
+        std::cout << "Single linked list size: " << list->size1() << "\n";
 
         for (int i = 1; i <= 3; i++)
         {
@@ -27,9 +31,13 @@ int main(int argc, char* argv[])
 
         list->print();
 
+        std::cout << "Single linked list size: " << list->size1() << "\n";
+
         list->remove(startVal);
 
         list->print();
+
+        std::cout << "Single linked list size: " << list->size1() << "\n";
 
         delete list;
     }

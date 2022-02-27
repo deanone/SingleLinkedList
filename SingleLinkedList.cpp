@@ -16,6 +16,40 @@ SingleLinkedList::~SingleLinkedList()
     }
 }
 
+int SingleLinkedList::size1()
+{
+    if (head == nullptr)    // empty list
+    {
+        return 0;
+    }
+
+    if (head->next == nullptr)   // list with only 1 element
+    {
+        return 1;
+    }
+
+    int s = 1;
+    Node* current = head;
+    while (current->next != nullptr)
+    {
+        s++;
+        current = current->next;
+    }
+    return s;
+}
+
+int SingleLinkedList::size2()
+{
+    int s = 0;
+    Node* current = head;
+    while (current != nullptr)
+    {
+        s++;
+        current = current->next;
+    }
+    return s;
+}
+
 void SingleLinkedList::append(int data)
 {
     if (head != nullptr) // if list not empty
@@ -42,7 +76,7 @@ void SingleLinkedList::prepend(int data)
 
 void SingleLinkedList::remove(int data)
 {
-    if (head != nullptr)
+    if (head != nullptr)    // if list not empty
     {
         if (head->data == data)
         {
@@ -77,7 +111,7 @@ void SingleLinkedList::print()
         }
 
         Node* current = head;
-        while (current->next != nullptr)
+        while (current != nullptr)
         {
             std::cout << current->data << " ";
             current = current->next;
