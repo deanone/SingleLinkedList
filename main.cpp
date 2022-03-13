@@ -29,7 +29,15 @@ int main(int argc, char* argv[])
             list->prepend(10 * i);
         }
 
+        std::cout << "The single linked list in initial order:\n";
         list->print();
+
+        std::cout << "The single linked list in reverse order:\n";
+        list->reverse();
+        list->print();
+
+        // back to initial order;
+        list->reverse();
 
         std::cout << "Single linked list size: " << list->size1() << "\n";
 
@@ -50,8 +58,8 @@ int main(int argc, char* argv[])
     }
     else
     {
-        std::cout << "Please provide the initial value for the head of the list after the name of the program.";
-        std::cout << "e.g., ./SingleLinkedList.out 2";
+        std::cout << "Please provide the initial value for the head of the list after the name of the program.\n";
+        std::cout << "e.g., ./SingleLinkedList.out 2\n";
     }
     return 0;
 }

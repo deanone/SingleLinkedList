@@ -32,6 +32,18 @@ public:
 
     void print();
 
+    /*!
+     * Reverses a part of the single linked list indicated by the pointers start and end (both inclusive).
+     * @param start the pointer indicating the start of the part of the single linked list.
+     * @param end the pointer indicating the end of the part of the single linked list. 
+     */
+    void reverse(Node* start, Node* end);
+
+    /*!
+     * Reverses the single linked list. 
+     */
+    void reverse();
+
 };
 
 

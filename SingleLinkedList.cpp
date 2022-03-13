@@ -1,6 +1,8 @@
 #include "SingleLinkedList.h"
 #include "Node.h"
+
 #include <iostream>
+#include <stack>
 
 SingleLinkedList::SingleLinkedList(int data)
 {
@@ -139,4 +141,38 @@ void SingleLinkedList::print()
         return; 
     }
     return;
+}
+
+void SingleLinkedList::reverse(Node* start, Node* end)
+{
+    std::stack<int> s;
+    Node* current = start;
+    while (current != end->next)
+    {
+        int data = current->data;
+        s.push(data);
+        current = current->next;
+    }
+
+    current = start;
+    while (!s.empty())
+    {
+        int data = s.top();
+        current->data = data;
+        current = current->next;
+        s.pop();
+    }
+}
+
+void SingleLinkedList::reverse()
+{
+    Node* current = head;
+    Node* end = nullptr;
+    while (current != nullptr)
+    {
+        end = current;
+        current = current->next;
+    }
+
+    reverse(head, end);
 }
