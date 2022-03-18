@@ -18,6 +18,8 @@ SingleLinkedList::~SingleLinkedList()
     }
 }
 
+// time complexity: O(n), where n is the number of elements in the list
+// we need to traverse the whole list in order to enumerate all its elements
 int SingleLinkedList::size1()
 {
     if (head == nullptr)    // empty list
@@ -40,6 +42,8 @@ int SingleLinkedList::size1()
     return s;
 }
 
+// time complexity: O(n), where n is the number of elements in the list
+// we need to traverse the whole list in order to enumerate all its elements
 int SingleLinkedList::size2()
 {
     int s = 0;
@@ -52,6 +56,8 @@ int SingleLinkedList::size2()
     return s;
 }
 
+// time complexity: O(n), where n is the number of elements in the list
+// in the worst case (i.e., when the key is not in the list), we need to traverse all n elements of the list
 bool SingleLinkedList::find(int key)
 {
     if (head == nullptr)
@@ -71,6 +77,9 @@ bool SingleLinkedList::find(int key)
     return false;
 }
 
+// time complexity: O(n), where n is the number of elements in the list
+// we need to reach the end of the list (i.e., to traverse all n elements of the list),
+// in order to insert the new element
 void SingleLinkedList::append(int data)
 {
     if (head != nullptr) // if list not empty
@@ -87,6 +96,7 @@ void SingleLinkedList::append(int data)
     return;
 }
 
+// time complexity: O(1)
 void SingleLinkedList::prepend(int data)
 {
     Node* node = new Node(data);
@@ -95,6 +105,8 @@ void SingleLinkedList::prepend(int data)
     return;
 }
 
+// time complexity: O(n), where n is the number of elements in the list
+// we need to linearly search for the data item first, and then to remove it.
 void SingleLinkedList::remove(int data)
 {
     if (head != nullptr)    // if list not empty
@@ -120,6 +132,38 @@ void SingleLinkedList::remove(int data)
     return;
 }
 
+// time complexity: O(n), where n is the number of elements in the list
+void SingleLinkedList::removeAtIndex(int index)
+{
+    if (index == 0)
+    {
+        if (head->next == nullptr)  // if list has only 1 element
+        {
+            return; //TODO: check if delete head; is a better approach.
+        }
+        else
+        {
+            head = head->next;
+            return;
+        }
+    }
+
+    int currentIndex = 0;
+    Node* current = head;
+    while (current->next != nullptr)
+    {
+        if ((currentIndex + 1) == index)
+        {
+            current->next = current->next->next;
+            break;
+        }
+        currentIndex++;
+        current = current->next;
+    }
+    return;
+}
+
+// time complexity: O(n), where n is the number of elements in the list
 void SingleLinkedList::print()
 {
     if (head != nullptr)
@@ -143,6 +187,7 @@ void SingleLinkedList::print()
     return;
 }
 
+// time complexity: O(n), where n is the number of elements in the list
 void SingleLinkedList::reverse(Node* start, Node* end)
 {
     std::stack<int> s;
@@ -164,6 +209,7 @@ void SingleLinkedList::reverse(Node* start, Node* end)
     }
 }
 
+// TODO: It does not seem correct. Check it again.
 void SingleLinkedList::reverse()
 {
     Node* current = head;
